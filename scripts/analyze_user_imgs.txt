@@ -1,0 +1,10 @@
+=== main.png ===
+size=(1920, 1080), mode=RGBA, bbox=(0, 0, 1920, 1080)
+=== الخدمات الاخري.png ===
+size=(510, 610), mode=RGBA, bbox=(0, 0, 510, 610)
+=== الصيانة.png ===
+size=(510, 610), mode=RGBA, bbox=(0, 0, 510, 610)
+=== العناية.png ===
+size=(510, 610), mode=RGBA, bbox=(0, 0, 510, 610)
+=== عزنا.png ===
+size=(280, 128), mode=RGBA, bbox=(0, 0, 280, 128)

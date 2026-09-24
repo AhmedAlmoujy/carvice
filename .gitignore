@@ -1,0 +1,22 @@
+# Large archives (exceed GitHub 100MB limit)
+*.zip
+*.tar.gz
+*.rar
+
+# OS generated files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and temporary files
+*.log

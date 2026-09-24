@@ -1,0 +1,7 @@
+Vice1.png: size=(77, 77), mode=RGBA, bytes=6354
+main.png: size=(1920, 1080), mode=RGBA, bytes=2145420
+vice2.png: size=(77, 77), mode=RGBA, bytes=6220
+الخدمات الاخري.png: size=(510, 610), mode=RGBA, bytes=339258
+الصيانة.png: size=(510, 610), mode=RGBA, bytes=371411
+العناية.png: size=(510, 610), mode=RGBA, bytes=379795
+عزنا.png: size=(280, 128), mode=RGBA, bytes=36664

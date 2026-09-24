@@ -1,0 +1,1691 @@
+/* ==========================================================================
+   Main Content Sections Styles
+   Services, About, Engine Feature, Why Us, Offers, FAQ
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Services Section ("خدماتنا")
+   -------------------------------------------------------------------------- */
+.services-section {
+  padding-top: 80px;
+  padding-bottom: 90px;
+}
+
+.services-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 16px;
+  padding: 15px 20px 24px;
+  margin: 25px -20px 0;
+  scrollbar-width: none;
+}
+
+.services-grid::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 40px auto 0;
+    overflow-x: visible;
+    max-width: 1240px;
+  }
+}
+
+@media (min-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+.service-card {
+  position: relative;
+  background-color: var(--color-primary-dark);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.14);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  border: 3px solid var(--color-gold);
+  aspect-ratio: 1145 / 1374;
+  cursor: pointer;
+  flex: 0 0 82%;
+  max-width: 320px;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+@media (min-width: 768px) {
+  .service-card {
+    flex: initial;
+    max-width: none;
+  }
+}
+
+.service-card:hover,
+.service-card.is-active {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 45px rgba(243, 168, 5, 0.35);
+  border-color: #FFC024;
+}
+
+/* Front Face: Main Photo & Title Overlay */
+.service-card-front {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1), transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+.service-card-front .service-card-img-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.service-card-front .service-card-img-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.service-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(11, 14, 17, 0.98) 0%, rgba(11, 14, 17, 0.75) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 24px 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+.service-card-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--color-text-white);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.service-card-btn {
+  width: 85%;
+  background-color: var(--color-gold);
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 10px 0;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 15px rgba(243, 168, 5, 0.3);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to right, rgba(22, 91, 51, 0.2) 0%, transparent 15%, transparent 85%, rgba(22, 91, 51, 0.2) 100%);
+  transition: var(--transition-fast);
+}
+
+.service-card:hover .service-card-btn {
+  background-color: var(--color-gold-hover);
+  box-shadow: 0 6px 20px rgba(243, 168, 5, 0.5);
+}
+
+/* Back Face: Detailed Graphic Revealed on Hover */
+.service-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.96);
+  transition: opacity 0.45s cubic-bezier(0.25, 1, 0.5, 1), transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.45s;
+  z-index: 3;
+  background-color: var(--color-primary-dark);
+}
+
+.service-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hover & Active Reveal */
+.service-card:hover .service-card-front,
+.service-card.is-active .service-card-front {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+.service-card:hover .service-card-back,
+.service-card.is-active .service-card-back {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.service-card-full-link {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+}
+
+/* Services Mobile Pagination Dots */
+.services-pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.services-pagination-dots .pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(11, 14, 17, 0.25);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.services-pagination-dots .pagination-dot.active {
+  width: 28px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-gold);
+}
+
+@media (min-width: 768px) {
+  .services-pagination-dots {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   About Us Section ("نحن كارفيس إكسبريس")
+   -------------------------------------------------------------------------- */
+.about-section {
+  padding-top: 70px;
+  padding-bottom: 90px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+  }
+}
+
+/* About Text (RTL Right) */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #D97706;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.about-eyebrow .chevron {
+  color: var(--color-gold);
+  font-weight: 900;
+}
+
+.about-title {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.35;
+}
+
+.about-title span {
+  color: var(--color-gold);
+}
+
+@media (min-width: 768px) {
+  .about-title {
+    font-size: 2.7rem;
+  }
+}
+
+.about-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.about-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.about-feature-bullet {
+  color: var(--color-gold);
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.about-feature-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #374151;
+  font-weight: 600;
+}
+
+.about-title-gold {
+  color: var(--color-gold) !important;
+  display: block;
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   About Visual Overlapping Collage & Ornaments (Zakhareef)
+   -------------------------------------------------------------------------- */
+.about-visual-collage {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  height: 380px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .about-visual-collage {
+    height: 440px;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-visual-collage {
+    height: 470px;
+  }
+}
+
+/* Photo Cards Frames */
+.about-photo-frame {
+  position: absolute;
+  border: 3.5px solid var(--color-gold);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  background-color: var(--color-primary-dark);
+}
+
+.about-photo-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(243, 168, 5, 0.35);
+}
+
+.about-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Top Right Photo (we2.png) */
+.photo-top-right {
+  width: 58%;
+  height: 62%;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+/* Bottom Left Photo (we.png) - Overlapping */
+.photo-bottom-left {
+  width: 65%;
+  height: 66%;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+/* Top-Left Ornament: Green Tree Badge (sa1.png) */
+.ornament-top-left {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .ornament-top-left {
+    left: 85px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ornament-top-left {
+    left: 105px;
+  }
+}
+
+.ornament-top-left:hover {
+  transform: scale(1.04);
+}
+
+.ornament-top-left img {
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.08));
+}
+
+@media (min-width: 768px) {
+  .ornament-top-left img {
+    width: 135px;
+  }
+}
+
+/* Bottom-Right Ornament: Saudi Pattern Badge (sa2.png) */
+.ornament-bottom-right {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .ornament-bottom-right {
+    bottom: 68px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ornament-bottom-right {
+    bottom: 82px;
+  }
+}
+
+.ornament-bottom-right:hover {
+  transform: scale(1.04);
+}
+
+.ornament-bottom-right img {
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.08));
+}
+
+@media (min-width: 768px) {
+  .ornament-bottom-right img {
+    width: 155px;
+  }
+}
+
+.ornament-bottom-right:hover {
+  transform: scale(1.04);
+}
+
+.ornament-bottom-right img {
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.08));
+}
+
+@media (min-width: 768px) {
+  .ornament-bottom-right img {
+    width: 155px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Featured Engine Wash Section ("غسيل المحرك من الداخل")
+   -------------------------------------------------------------------------- */
+.engine-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: var(--color-primary-dark);
+}
+
+.engine-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .engine-grid {
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 36px;
+  }
+}
+
+/* Left: Engine Details & CTA */
+.engine-left-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.engine-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.engine-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 90px;
+  height: 3px;
+  background-color: var(--color-gold);
+  border-radius: 2px;
+}
+
+.engine-desc {
+  font-size: 1.05rem;
+  color: #D1D5DB;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.engine-cta-btn {
+  align-self: flex-start;
+  background: transparent;
+  color: var(--color-text-white);
+  border: 2px solid var(--color-gold);
+  padding: 10px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 1.05rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition-smooth);
+}
+
+.engine-cta-btn:hover {
+  background-color: var(--color-gold);
+  color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Center: Interactive Before/After Engine Comparison */
+.engine-comparison-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  user-select: none;
+  touch-action: pan-y;
+  cursor: ew-resize;
+}
+
+.engine-compare-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+  border: 1.5px solid rgba(243, 168, 5, 0.3);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Interactive Split Overlays */
+.engine-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.engine-dirty-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+  will-change: clip-path;
+  pointer-events: none;
+}
+
+.engine-dirty-overlay img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.engine-slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: var(--color-gold);
+  cursor: ew-resize;
+  z-index: 10;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(243, 168, 5, 0.7);
+  pointer-events: none;
+}
+
+.engine-handle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  background-color: #0E1217;
+  border: 2px solid var(--color-gold);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 12px rgba(243, 168, 5, 0.4);
+  pointer-events: auto;
+  cursor: ew-resize;
+  color: var(--color-gold);
+}
+
+/* Right: Feature Pillars */
+.engine-right-features {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.engine-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-align: right;
+}
+
+.engine-feature-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background-color: rgba(243, 168, 5, 0.12);
+  border: 1px solid rgba(243, 168, 5, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.engine-feature-icon svg,
+.engine-feature-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.engine-feature-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  margin-bottom: 4px;
+}
+
+.engine-feature-desc {
+  font-size: 0.95rem;
+  color: #9CA3AF;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Why CarVice Section ("لماذا كارفيس")
+   -------------------------------------------------------------------------- */
+.why-us-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .why-us-grid {
+    grid-template-columns: 1fr 1.15fr;
+    gap: 60px;
+  }
+}
+
+/* Left (in LTR) / Visual Card (in RTL) */
+.why-us-visual {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--color-gold);
+}
+
+.why-us-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Right Content */
+.why-us-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.why-us-eyebrow {
+  color: #D97706;
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.why-us-title {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.35;
+}
+
+.why-us-title span {
+  color: var(--color-gold);
+}
+
+@media (min-width: 768px) {
+  .why-us-title {
+    font-size: 2.6rem;
+  }
+}
+
+/* 6 Feature Badges Grid */
+.why-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 24px;
+  margin-top: 10px;
+}
+
+.why-perk-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1F2937;
+}
+
+.why-perk-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.why-perk-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.why-perk-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(243, 168, 5, 0.25));
+}
+
+/* Animated Progress Bars */
+.why-progress-group {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 24px;
+}
+
+.progress-item-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1F2937;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background-color: #E5E7EB;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--color-gold);
+  border-radius: var(--radius-pill);
+  width: 0%;
+  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Exclusive Offers Banner Section ("عروضنا الحصرية")
+   -------------------------------------------------------------------------- */
+.offers-section {
+  padding-top: 70px;
+  padding-bottom: 90px;
+}
+
+.offers-banner-wrapper {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.offers-slides-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 28px;
+  direction: ltr; /* Keeps transform calculations deterministic */
+}
+
+.offers-slides-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.offer-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  direction: rtl;
+}
+
+.offers-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 28px;
+}
+
+/* Banner Slider Controls */
+.offers-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background-color: rgba(17, 24, 39, 0.75);
+  border: 2px solid var(--color-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  font-size: 1.2rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.offers-nav-arrow:hover {
+  background-color: var(--color-gold);
+  color: var(--color-primary-dark);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.offers-nav-prev {
+  right: 20px;
+}
+
+.offers-nav-next {
+  left: 20px;
+}
+
+@media (max-width: 767px) {
+  .offers-nav-arrow {
+    display: none !important;
+  }
+}
+
+/* Offers Pagination Dots Placed Under Images */
+.offers-pagination-dots {
+  position: relative;
+  margin: 20px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  z-index: 10;
+  background: rgba(11, 14, 17, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(243, 168, 5, 0.35);
+}
+
+.offers-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.offers-dot.active {
+  width: 28px;
+  border-radius: 6px;
+  background-color: var(--color-gold);
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Section ("الأسئلة الشائعة")
+   -------------------------------------------------------------------------- */
+.faq-section {
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .faq-grid {
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: 60px;
+  }
+}
+
+/* Left Accordion Column (in RTL) */
+.faq-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-eyebrow {
+  color: #D97706;
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.faq-title {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.faq-desc {
+  font-size: 1.05rem;
+  color: #4B5563;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Accordion Items */
+.faq-accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background-color: #FFFFFF;
+  border: 2px solid var(--color-gold);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-item.is-active {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 15px rgba(243, 168, 5, 0.2);
+}
+
+.faq-question-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111827;
+  text-align: right;
+  cursor: pointer;
+}
+
+.faq-item.is-active .faq-question-btn {
+  color: #111827;
+}
+
+.faq-icon-arrow {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #111827;
+}
+
+.faq-icon-arrow svg {
+  display: block;
+}
+
+.faq-item.is-active .faq-icon-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  padding: 0 22px;
+  color: #0B0E11;
+  font-size: 1rem;
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+.faq-item.is-active .faq-answer-panel {
+  max-height: 220px;
+  padding-bottom: 20px;
+}
+
+/* Right Illustration */
+.faq-visual-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--color-gold);
+}
+
+.faq-visual-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3D Gold Chevron Indicators (Vice1.png & vice2.png)
+   -------------------------------------------------------------------------- */
+.badge-chevron {
+  height: 28px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(243, 168, 5, 0.4));
+  transition: transform var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .badge-chevron {
+    height: 34px;
+  }
+}
+
+.eyebrow-chevron {
+  height: 18px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(243, 168, 5, 0.35));
+}
+
+.bullet-chevron {
+  height: 18px;
+  width: auto;
+  margin-top: 4px;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(243, 168, 5, 0.3));
+}
+
+.card-chevron {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(243, 168, 5, 0.4));
+}
+
+.handle-chevron {
+  height: 16px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   Testimonials / Customer Reviews ("آراء عملائنا")
+   -------------------------------------------------------------------------- */
+.testimonials-section {
+  padding: 90px 0 100px;
+  background-color: var(--color-primary-dark);
+  background-image: linear-gradient(to bottom, rgba(11, 14, 17, 0.82) 0%, rgba(11, 14, 17, 0.9) 100%),
+                    url('../assets/images/testimonials_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+}
+
+.testimonials-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.testimonials-badge-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .testimonials-badge-title {
+    font-size: 2.25rem;
+  }
+}
+
+.testimonials-main-heading {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--color-text-white);
+  margin-bottom: 14px;
+}
+
+.testimonials-subtext {
+  font-size: 1.1rem;
+  color: #D1D5DB;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.reviews-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 16px;
+  padding: 10px 20px 24px;
+  margin: 20px -20px 0;
+  scrollbar-width: none;
+}
+
+.reviews-grid::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding: 0;
+    margin: 30px 0 0;
+    overflow-x: visible;
+  }
+}
+
+.review-card {
+  flex: 0 0 85%;
+  max-width: 358px;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  transition: transform var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .review-card {
+    flex: initial;
+    max-width: none;
+  }
+}
+
+.review-card-img {
+  width: 100%;
+  max-width: 358px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.5));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.review-card:hover .review-card-img {
+  transform: translateY(-8px) scale(1.02);
+  filter: drop-shadow(0 18px 36px rgba(243, 168, 5, 0.3));
+}
+
+.review-card-top-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-gold);
+}
+
+.review-stars svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.review-text {
+  font-size: 1.05rem;
+  color: #F3F4F6;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.reviews-pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.pagination-dot.active {
+  width: 28px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-gold);
+}
+
+/* --------------------------------------------------------------------------
+   Who We Serve Section ("من نخدم؟")
+   -------------------------------------------------------------------------- */
+.personas-section {
+  padding: 80px 0 90px;
+}
+
+.personas-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 16px;
+  padding: 10px 20px 20px;
+  margin: 30px -20px 0;
+  scrollbar-width: none;
+}
+
+.personas-grid::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .personas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0;
+    margin: 40px 0 0;
+    overflow-x: visible;
+  }
+}
+
+@media (min-width: 992px) {
+  .personas-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.persona-card {
+  flex: 0 0 78%;
+  max-width: 310px;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--color-gold);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+@media (min-width: 768px) {
+  .persona-card {
+    flex: initial;
+    max-width: none;
+  }
+}
+
+.persona-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(243, 168, 5, 0.25);
+}
+
+.persona-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.personas-pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.personas-pagination-dots .pagination-dot {
+  background-color: rgba(11, 14, 17, 0.25);
+}
+
+.personas-pagination-dots .pagination-dot.active {
+  background-color: var(--color-gold);
+}
+
+@media (min-width: 768px) {
+  .personas-pagination-dots {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Our Branches Locator ("فروعنا")
+   -------------------------------------------------------------------------- */
+.branches-section {
+  padding: 80px 0 100px;
+}
+
+.branches-map-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border: 4px solid var(--color-gold);
+  margin-top: 40px;
+  background-color: var(--color-primary-dark);
+}
+
+.branches-map-card picture,
+.branches-map-picture {
+  display: block;
+  width: 100%;
+}
+
+.branches-map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .branches-map-card .map-hotspot {
+    display: none !important;
+  }
+}
+
+/* Interactive Map Hotspot Pins */
+.map-hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.map-hotspot-pin {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD700 0%, #F3A805 100%);
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 16px rgba(243, 168, 5, 0.9), 0 4px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.map-hotspot-pin::before {
+  content: '📍';
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.map-hotspot:hover .map-hotspot-pin {
+  transform: scale(1.35) rotate(-8deg);
+  background: #FFFFFF;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 25px rgba(243, 168, 5, 1), 0 6px 16px rgba(0, 0, 0, 0.8);
+}
+
+.map-hotspot-ping {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  margin-top: -13px;
+  margin-left: -13px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  opacity: 0.85;
+  animation: pingAnimation 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.map-hotspot-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  background: rgba(11, 14, 17, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(243, 168, 5, 0.6);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0.95;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 12px rgba(243, 168, 5, 0.3);
+  z-index: 20;
+}
+
+.map-hotspot-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(243, 168, 5, 0.6) transparent transparent transparent;
+}
+
+.map-hotspot:hover .map-hotspot-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-3px) scale(1.05);
+  border-color: var(--color-gold);
+}
+
+@keyframes pingAnimation {
+  75%, 100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+.branches-action-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+/* ==========================================================================
+   Master Multi-Device Responsiveness Polish (All Screen Sizes)
+   ========================================================================== */
+
+/* 1. Ultra-Small Screens (< 400px) */
+@media (max-width: 399px) {
+  .section-badge-title {
+    font-size: 1.45rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .about-title {
+    font-size: 1.65rem;
+  }
+
+  .about-visual-collage {
+    height: 310px;
+    max-width: 340px;
+  }
+
+  .ornament-top-left {
+    left: 20px;
+  }
+
+  .ornament-top-left img {
+    width: 80px;
+  }
+
+  .ornament-bottom-right {
+    bottom: 25px;
+  }
+
+  .ornament-bottom-right img {
+    width: 95px;
+  }
+
+  .services-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .services-nav-prev {
+    right: 2px;
+  }
+
+  .services-nav-next {
+    left: 2px;
+  }
+
+  .offers-nav-arrow {
+    display: none !important;
+  }
+
+  .offers-pagination-dots {
+    position: relative !important;
+    margin: 16px auto 0 auto !important;
+    bottom: auto !important;
+    padding: 6px 14px !important;
+  }
+}
+
+/* 2. Small to Medium Mobile Screens (400px - 575px) */
+@media (min-width: 400px) and (max-width: 575px) {
+  .about-visual-collage {
+    height: 350px;
+  }
+
+  .ornament-top-left img {
+    width: 95px;
+  }
+
+  .ornament-bottom-right img {
+    width: 110px;
+  }
+
+  .services-nav-prev {
+    right: 4px;
+  }
+
+  .services-nav-next {
+    left: 4px;
+  }
+}
+
+/* 3. Tablets & Small Laptops (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-visual-collage {
+    height: 440px;
+  }
+
+  .engine-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .engine-right-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    text-align: center;
+  }
+
+  .engine-feature-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .engine-left-info {
+    text-align: center;
+    align-items: center;
+  }
+
+  .engine-cta-btn {
+    align-self: center;
+  }
+}
+
+/* 4. Large Desktop Screens (1400px+) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1360px;
+  }
+
+  .services-slider-outer,
+  .offers-banner-wrapper {
+    max-width: 1320px;
+  }
+}

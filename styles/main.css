@@ -1,0 +1,422 @@
+/* ==========================================================================
+   CarVice Express (كارفيس إكسبريس) - Master Stylesheet
+   Design System Tokens, Reset, Typography, Global Utilities
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Brand Palette */
+  --color-primary-dark: #0B0E11;
+  --color-dark-surface: #12161B;
+  --color-dark-card: #181E25;
+  --color-sand-bg: #FBF8F1;
+  --color-sand-card: #FFFFFF;
+  
+  /* Brand Gold Accents */
+  --color-gold: #F3A805;
+  --color-gold-hover: #E29600;
+  --color-gold-light: rgba(243, 168, 5, 0.12);
+  --color-gold-border: rgba(243, 168, 5, 0.45);
+  --color-gold-glow: rgba(243, 168, 5, 0.3);
+
+  /* Saudi Heritage Green */
+  --color-saudi-green: #165B33;
+  --color-saudi-green-light: #EBF4EE;
+  
+  /* Text Neutrals */
+  --color-text-white: #FFFFFF;
+  --color-text-dark: #1A1D20;
+  --color-text-muted: #6B7280;
+  --color-text-muted-dark: #9CA3AF;
+  
+  /* Typography Scale */
+  --font-family-base: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Spacing */
+  --container-max: 1380px;
+  --header-height: 86px;
+  --section-spacing-desktop: 100px;
+  --section-spacing-mobile: 60px;
+  
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  
+  /* Transitions & Shadows */
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.15s ease-out;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-gold: 0 8px 25px rgba(243, 168, 5, 0.28);
+  --shadow-dark: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   CSS Reset & Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  scroll-behavior: smooth;
+  direction: rtl;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-sand-bg);
+  color: var(--color-text-dark);
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   Container & Layout Utilities
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.section-sand {
+  background-color: var(--color-sand-bg);
+  color: var(--color-text-dark);
+  position: relative;
+}
+
+.section-dark {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-white);
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Section Headings & Accents
+   -------------------------------------------------------------------------- */
+.section-header-block {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-badge-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .section-badge-title {
+    font-size: 2.25rem;
+  }
+}
+
+.section-badge-title .chevron {
+  display: inline-block;
+  color: var(--color-gold);
+  letter-spacing: -2px;
+  font-weight: 900;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-dark);
+  margin-top: 12px;
+  font-weight: 600;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-subtitle.text-white {
+  color: var(--color-text-white);
+}
+
+.section-subtitle.text-muted {
+  color: var(--color-text-muted-dark);
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   Global Buttons & Micro-Interactions
+   -------------------------------------------------------------------------- */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-gold);
+  color: var(--color-primary-dark);
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-gold);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(243, 168, 5, 0.4);
+}
+
+.btn-gold:active {
+  transform: scale(0.97);
+}
+
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--color-text-white);
+  border: 1.5px solid var(--color-gold);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold-hover);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #26292E;
+  color: var(--color-text-white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-dark:hover {
+  background-color: #32363D;
+  transform: translateY(-2px);
+}
+
+/* Traditional Saudi Pattern Ribbon Banner */
+.pattern-ribbon {
+  width: 100%;
+  height: 70px;
+  background-color: var(--color-primary-dark);
+  background-image: url('../assets/images/zag_banner.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center top;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .pattern-ribbon {
+    height: 85px;
+  }
+}
+
+/* ==========================================================================
+   Master Keyframes & Animation System
+   ========================================================================== */
+
+/* Button Light Beam Sweep Effect */
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.btn-gold:hover::before {
+  animation: btnLightBeam 1.2s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+}
+
+@keyframes btnLightBeam {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+/* Metallic Gold Text Shimmer */
+.gold-shimmer-text {
+  background: linear-gradient(120deg, #F3A805 0%, #FFF5D0 35%, #F3A805 70%, #E29600 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+}
+
+@keyframes textShimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Floating Animation for Badges & Images */
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite alternate;
+}
+
+.animate-float-soft {
+  animation: floatSoft 5s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes floatSoft {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Chevron Bounce Animation */
+.badge-chevron {
+  display: inline-block;
+  transition: transform var(--transition-smooth);
+  animation: chevronPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes chevronPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15) translateY(-2px);
+  }
+}
+
+/* Glowing Aura Pulse */
+.animate-pulse-glow {
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(243, 168, 5, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(243, 168, 5, 0.7);
+  }
+}
+
+/* Image Hover Zoom & Tilt Utility */
+.hover-zoom-img {
+  overflow: hidden;
+}
+
+.hover-zoom-img img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-zoom-img:hover img {
+  transform: scale(1.06);
+}
+
+/* Safe Progressive Scroll Reveal (Always 100% visible) */
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+html.js-reveal-active .reveal:not(.is-visible),
+html.js-reveal-active .reveal-left:not(.is-visible),
+html.js-reveal-active .reveal-right:not(.is-visible),
+html.js-reveal-active .reveal-scale:not(.is-visible) {
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
+}
+
+/* Staggered Delay Helpers */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
