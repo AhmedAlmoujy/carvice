@@ -5,7 +5,7 @@
 
 /* Page Canvas */
 body.services-page {
-  background-color: #FFFAEC;
+  background-color: #0B0E11;
   color: var(--color-text-dark, #0B0E11);
   font-family: var(--font-family-base, 'Cairo', sans-serif);
   margin: 0;
@@ -24,6 +24,7 @@ body.services-page {
   justify-content: center;
   background-color: #0B0E11;
   overflow: hidden;
+  margin-top: var(--services-hero-margin, 80px);
 }
 
 /* Hero image shown in full, no cropping */
@@ -43,7 +44,6 @@ body.services-page {
   justify-content: center;
   z-index: 2;
   pointer-events: none;
-  padding-top: var(--header-height, 86px);
 }
 
 .services-hero-title {
@@ -62,6 +62,9 @@ body.services-page {
 }
 
 @media (max-width: 768px) {
+  .services-hero {
+    margin-top: var(--services-hero-margin, 74px);
+  }
   .services-hero-title {
     font-size: 52px;
     line-height: 62px;
@@ -69,6 +72,9 @@ body.services-page {
 }
 
 @media (max-width: 480px) {
+  .services-hero {
+    margin-top: var(--services-hero-margin, 74px);
+  }
   .services-hero-title {
     font-size: 38px;
     line-height: 48px;

@@ -3,8 +3,18 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Header scroll effect
+  // 1. Header scroll effect & Hero alignment
   const siteHeader = document.getElementById('site-header');
+  function syncHeroOffset() {
+    if (siteHeader && window.scrollY === 0) {
+      const headerHeight = Math.floor(siteHeader.getBoundingClientRect().height);
+      const offset = Math.max(0, headerHeight - 1);
+      document.documentElement.style.setProperty('--services-hero-margin', `${offset}px`);
+    }
+  }
+  syncHeroOffset();
+  window.addEventListener('resize', syncHeroOffset);
+
   if (siteHeader) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 30) {
