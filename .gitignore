@@ -20,3 +20,18 @@ ehthumbs_vista.db
 
 # Logs and temporary files
 *.log
+
+# Scratch and temporary working files
+scratch_*.jpg
+scratch_*.png
+pdf_branches_text.txt
+Container.png
+border_crop.png
+
+# PDF source files (too large for git)
+*.pdf
+
+# Extracted/rendered PDF reference directories
+pdf_extracted/
+pdf_sections_render/
+extracted_cards/

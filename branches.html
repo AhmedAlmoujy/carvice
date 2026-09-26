@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروع كارفيس إكسبريس | مواقع فروعنا في الدمام والخبر</title>
+  <meta name="description" content="تعرف على مواقع فروع كارفيس إكسبريس في المنطقة الشرقية (الدمام والخبر). مواعيد العمل، أرقام التواصل، والاتجاهات عبر خرائط جوجل.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/Vice1.png">
+  <link rel="apple-touch-icon" href="assets/images/Vice1.png">
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/branches.css">
+  <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body class="branches-page">
+
+  <!-- =========================================================================
+       1. Header & Navigation Bar
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      
+      <!-- Right: Brand Logo (in RTL) -->
+      <a href="index.html" class="site-logo" aria-label="كارفيس إكسبريس الرئيسية">
+        <img src="assets/images/logo.png" alt="شعار كارفيس إكسبريس CarVice Express">
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <nav class="desktop-nav" aria-label="القائمة الرئيسية">
+        <a href="index.html" class="nav-link" data-section="hero">الرئيسية</a>
+        <a href="index.html#about" class="nav-link" data-section="about">من نحن</a>
+        <a href="index.html#services" class="nav-link" data-section="services">خدماتنا</a>
+        <a href="index.html#offers" class="nav-link" data-section="offers">عروضنا</a>
+        <a href="branches.html" class="nav-link active" data-section="branches">فروعنا</a>
+        <a href="index.html#faq" class="nav-link" data-section="faq">الأسئلة الشائعة</a>
+        <a href="https://carvicegroup.com/%d8%a7%d9%84%d9%85%d8%af%d9%88%d9%86%d8%a9/" target="_blank" rel="noopener" class="nav-link">المدونة</a>
+        <a href="#site-footer" class="nav-link" data-section="site-footer">تواصل معنا</a>
+      </nav>
+
+      <!-- Left: Header Actions -->
+      <div class="header-actions">
+        <a href="tel:0569392700" class="header-call-btn" id="header-contact-btn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>اتصل بنا</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-menu-btn" aria-label="فتح القائمة">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html" class="mobile-nav-link" data-section="hero">الرئيسية</a>
+    <a href="index.html#about" class="mobile-nav-link" data-section="about">من نحن</a>
+    <a href="index.html#services" class="mobile-nav-link" data-section="services">خدماتنا</a>
+    <a href="index.html#offers" class="mobile-nav-link" data-section="offers">عروضنا</a>
+    <a href="branches.html" class="mobile-nav-link active" data-section="branches">فروعنا</a>
+    <a href="index.html#faq" class="mobile-nav-link" data-section="faq">الأسئلة الشائعة</a>
+    <a href="https://carvicegroup.com/%d8%a7%d9%84%d9%85%d8%af%d9%88%d9%86%d8%a9/" target="_blank" rel="noopener" class="mobile-nav-link">المدونة</a>
+    <a href="#site-footer" class="mobile-nav-link" data-section="site-footer">تواصل معنا</a>
+    <a href="tel:0569392700" class="btn-gold" style="margin-top: 20px; width: 100%;">اتصل بنا الآن</a>
+  </aside>
+
+  <!-- =========================================================================
+       2. Branches Hero Section (Full-width image display from PDF)
+       ========================================================================= -->
+  <section class="branches-hero" id="branches-hero">
+    <!-- Full hero background image displayed without cropping -->
+    <img src="assets/images/branches/branches-hero.png" 
+         alt="فروع كارفيس إكسبريس في المملكة العربية السعودية" 
+         class="branches-hero-img">
+
+    <!-- Title overlay -->
+    <div class="branches-hero-content">
+      <h1 class="branches-hero-title">فروعنا</h1>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. Branches Cards List (Matching PDF reference - proper HTML cards)
+       ========================================================================= -->
+  <main class="branches-main-section" id="branches-list-section">
+    <div class="container">
+
+      <div class="branches-cards-list" id="branches-container">
+
+        <!-- ===================================================================
+             Branch 1: الدمام - حي المزروعية (طريق الملك فيصل)
+             =================================================================== -->
+        <article class="branch-card" data-city="dammam">
+          <img src="assets/images/branches/card_frame.png" alt="" class="branch-card-frame" aria-hidden="true">
+          <div class="branch-card-inner">
+            <div class="branch-card-info">
+              <h2 class="branch-card-title">المنطقة الشرقية - الدمام</h2>
+              <p class="branch-card-address">حي المزروعية - طريق الملك فيصل</p>
+              <a href="https://wa.me/966530623461?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%83%D8%A7%D8%B1%D9%81%D9%8A%D8%B3%20%D8%A5%D9%83%D8%B3%D8%A8%D8%B1%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85%20-%20%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B2%D8%B1%D9%88%D8%B9%D9%8A%D8%A9%20(%D8%B7%D8%B1%D9%8A%D9%82%20%D8%A7%D9%84%D9%85%D9%84%D9%83%20%D9%81%D9%8A%D8%B5%D9%84)" 
+                 target="_blank" rel="noopener" class="branch-btn-primary">
+                تواصل مع الفرع
+              </a>
+            </div>
+            <div class="branch-card-map-wrap">
+              <a href="https://maps.google.com/?q=%D8%B7%D8%B1%D9%8A%D9%82%20%D8%A7%D9%84%D9%85%D9%84%D9%83%20%D9%81%D9%8A%D8%B5%D9%84,%20%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B2%D8%B1%D9%88%D8%B9%D9%8A%D8%A9,%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85" 
+                 target="_blank" rel="noopener" class="branch-map-badge">
+                <span>Open in Maps</span>
+                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <img src="assets/images/branches/map_1_mazrouiyah_faisal.jpg" 
+                   alt="خريطة فرع الدمام حي المزروعية طريق الملك فيصل" 
+                   class="branch-map-img" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             Branch 2: الخبر - حي الجوهرة (طريق الملك فهد بن عبدالعزيز)
+             =================================================================== -->
+        <article class="branch-card" data-city="khobar">
+          <img src="assets/images/branches/card_frame.png" alt="" class="branch-card-frame" aria-hidden="true">
+          <div class="branch-card-inner">
+            <div class="branch-card-info">
+              <h2 class="branch-card-title">المنطقة الشرقية - الخبر</h2>
+              <p class="branch-card-address">حي الجوهرة - طريق الملك فهد بن عبدالعزيز</p>
+              <a href="https://wa.me/966530623461?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%83%D8%A7%D8%B1%D9%81%D9%8A%D8%B3%20%D8%A5%D9%83%D8%B3%D8%A8%D8%B1%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%20-%20%D8%AD%D9%8A%20%D8%A7%D9%84%D8%AC%D9%88%D9%87%D8%B1%D8%A9%20(%D8%B7%D8%B1%D9%8A%D9%82%20%D8%A7%D9%84%D9%85%D9%84%D9%83%20%D9%81%D9%87%D8%AF)" 
+                 target="_blank" rel="noopener" class="branch-btn-primary">
+                تواصل مع الفرع
+              </a>
+            </div>
+            <div class="branch-card-map-wrap">
+              <a href="https://maps.google.com/?q=%D8%B7%D8%B1%D9%8A%D9%82%20%D8%A7%D9%84%D9%85%D9%84%D9%83%20%D9%81%D9%87%D8%AF%20%D8%A8%D9%86%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2,%20%D8%AD%D9%8A%20%D8%A7%D9%84%D8%AC%D9%88%D9%87%D8%B1%D8%A9,%20%D8%A7%D9%84%D8%AE%D8%A8%D8%B1" 
+                 target="_blank" rel="noopener" class="branch-map-badge">
+                <span>Open in Maps</span>
+                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <img src="assets/images/branches/map_2_jawharah_fahd.jpg" 
+                   alt="خريطة فرع الخبر حي الجوهرة طريق الملك فهد" 
+                   class="branch-map-img" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             Branch 3: الدمام - حي المزروعية
+             =================================================================== -->
+        <article class="branch-card" data-city="dammam">
+          <img src="assets/images/branches/card_frame.png" alt="" class="branch-card-frame" aria-hidden="true">
+          <div class="branch-card-inner">
+            <div class="branch-card-info">
+              <h2 class="branch-card-title">المنطقة الشرقية - الدمام</h2>
+              <p class="branch-card-address">حي المزروعية</p>
+              <a href="https://wa.me/966530623461?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%83%D8%A7%D8%B1%D9%81%D9%8A%D8%B3%20%D8%A5%D9%83%D8%B3%D8%A8%D8%B1%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85%20-%20%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B2%D8%B1%D9%88%D8%B9%D9%8A%D8%A9" 
+                 target="_blank" rel="noopener" class="branch-btn-primary">
+                تواصل مع الفرع
+              </a>
+            </div>
+            <div class="branch-card-map-wrap">
+              <a href="https://maps.google.com/?q=%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B2%D8%B1%D9%88%D8%B9%D9%8A%D8%A9,%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85" 
+                 target="_blank" rel="noopener" class="branch-map-badge">
+                <span>Open in Maps</span>
+                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <img src="assets/images/branches/map_3_mazrouiyah.jpg" 
+                   alt="خريطة فرع الدمام حي المزروعية" 
+                   class="branch-map-img" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             Branch 4: الدمام - حي الشعلة
+             =================================================================== -->
+        <article class="branch-card" data-city="dammam">
+          <img src="assets/images/branches/card_frame.png" alt="" class="branch-card-frame" aria-hidden="true">
+          <div class="branch-card-inner">
+            <div class="branch-card-info">
+              <h2 class="branch-card-title">المنطقة الشرقية - الدمام</h2>
+              <p class="branch-card-address">حي الشعلة</p>
+              <a href="https://wa.me/966530623461?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%83%D8%A7%D8%B1%D9%81%D9%8A%D8%B3%20%D8%A5%D9%83%D8%B3%D8%A8%D8%B1%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85%20-%20%D8%AD%D9%8A%20%D8%A7%D9%84%D8%B4%D8%B9%D9%84%D8%A9" 
+                 target="_blank" rel="noopener" class="branch-btn-primary">
+                تواصل مع الفرع
+              </a>
+            </div>
+            <div class="branch-card-map-wrap">
+              <a href="https://maps.google.com/?q=%D8%AD%D9%8A%20%D8%A7%D9%84%D8%B4%D8%B9%D9%84%D8%A9,%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85" 
+                 target="_blank" rel="noopener" class="branch-map-badge">
+                <span>Open in Maps</span>
+                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <img src="assets/images/branches/map_4_shula.jpg" 
+                   alt="خريطة فرع الدمام حي الشعلة" 
+                   class="branch-map-img" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             Branch 5: الدمام - حي أحد (شارع كلثوم بن الحسين)
+             =================================================================== -->
+        <article class="branch-card" data-city="dammam">
+          <img src="assets/images/branches/card_frame.png" alt="" class="branch-card-frame" aria-hidden="true">
+          <div class="branch-card-inner">
+            <div class="branch-card-info">
+              <h2 class="branch-card-title">المنطقة الشرقية - الدمام</h2>
+              <p class="branch-card-address">حي أحد - طريق شارع كلثوم بن الحسين</p>
+              <a href="https://wa.me/966530623461?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%83%D8%A7%D8%B1%D9%81%D9%8A%D8%B3%20%D8%A5%D9%83%D8%B3%D8%A8%D8%B1%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85%20-%20%D8%AD%D9%8A%20%D8%A3%D8%AD%D8%AF" 
+                 target="_blank" rel="noopener" class="branch-btn-primary">
+                تواصل مع الفرع
+              </a>
+            </div>
+            <div class="branch-card-map-wrap">
+              <a href="https://maps.google.com/?q=%D8%B4%D8%A7%D8%B1%D8%B9%20%D9%83%D9%84%D8%AB%D9%88%D9%85%20%D8%A8%D9%86%20%D8%A7%D9%84%D8%AD%D8%B3%D9%8A%D9%86,%20%D8%AD%D9%8A%20%D8%A3%D8%AD%D8%AF,%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85" 
+                 target="_blank" rel="noopener" class="branch-map-badge">
+                <span>Open in Maps</span>
+                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <img src="assets/images/branches/map_5_uhud_kulthum.jpg" 
+                   alt="خريطة فرع الدمام حي أحد شارع كلثوم بن الحسين" 
+                   class="branch-map-img" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- ===================================================================
+             Branch 6: الخبر - حي الصواري
+             =================================================================== -->
+        <article class="branch-card" data-city="khobar">
+          <img src="assets/images/branches/card_frame.png" alt="" class="branch-card-frame" aria-hidden="true">
+          <div class="branch-card-inner">
+            <div class="branch-card-info">
+              <h2 class="branch-card-title">المنطقة الشرقية - الخبر</h2>
+              <p class="branch-card-address">حي الصواري</p>
+              <a href="https://wa.me/966530623461?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%83%D8%A7%D8%B1%D9%81%D9%8A%D8%B3%20%D8%A5%D9%83%D8%B3%D8%A8%D8%B1%D9%8A%D8%B3%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A8%D8%B1%20-%20%D8%AD%D9%8A%20%D8%A7%D9%84%D8%B5%D9%88%D8%A7%D8%B1%D9%8A" 
+                 target="_blank" rel="noopener" class="branch-btn-primary">
+                تواصل مع الفرع
+              </a>
+            </div>
+            <div class="branch-card-map-wrap">
+              <a href="https://maps.google.com/?q=%D8%AD%D9%8A%20%D8%A7%D9%84%D8%B5%D9%88%D8%A7%D8%B1%D9%8A,%20%D8%A7%D9%84%D8%AE%D8%A8%D8%B1" 
+                 target="_blank" rel="noopener" class="branch-map-badge">
+                <span>Open in Maps</span>
+                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <img src="assets/images/branches/map_6_sawari.jpg" 
+                   alt="خريطة فرع الخبر حي الصواري" 
+                   class="branch-map-img" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       4. Footer Section (Matches index.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-grid">
+      
+      <!-- Column 1: Brand & Slogan (RTL Right) -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/images/footer_logo.png" alt="شعار كارفيس إكسبريس">
+        </a>
+        <p class="footer-slogan">
+          كارفيس اكسبريس... خبراء الصيانة الدورية
+        </p>
+      </div>
+
+      <!-- Column 2: Navigation Links (Center) -->
+      <div class="footer-nav-col">
+        <h4 class="footer-heading">صفحاتنا</h4>
+        <div class="footer-links-list">
+          <a href="index.html" class="footer-link">الرئيسية</a>
+          <a href="index.html#about" class="footer-link">من نحن</a>
+          <a href="index.html#services" class="footer-link">خدماتنا</a>
+          <a href="branches.html" class="footer-link">فروعنا</a>
+          <a href="https://carvicegroup.com/%d8%a7%d9%84%d9%85%d8%af%d9%88%d9%86%d8%a9/" target="_blank" rel="noopener" class="footer-link">المدونة</a>
+          <a href="#site-footer" class="footer-link">تواصل معنا</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Contact & App Download (RTL Left) -->
+      <div class="footer-contact-col">
+        <h4 class="footer-heading">تواصل معنا</h4>
+        
+        <div class="footer-contact-item">
+          <a href="tel:0569392700" style="direction: ltr;">0569392700</a>
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+
+        <div class="footer-contact-item">
+          <a href="https://wa.me/966530623461" target="_blank" rel="noopener" style="direction: ltr;">+966 53 062 3461</a>
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24"/></svg>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="footer-social-row">
+          <a href="https://www.snapchat.com/@carviceexpress?share_id=XWyNjeBmCYg&locale=ar-EG" target="_blank" rel="noopener" class="footer-social-btn" aria-label="سناب شات">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2c-3.18 0-5.46 2.05-5.59 4.88-.04.88.22 1.83.58 2.52-.41.13-.91.31-1.28.53-.45.26-.74.65-.63 1.18.11.51.57.85 1.06 1.01.21.07.44.11.67.14-.24.78-.71 1.48-1.38 1.95-.51.36-.88.82-.78 1.38.1.58.62.97 1.25 1.12.92.22 1.93.07 2.82-.12.44-.09.87-.2 1.31-.29.44.09.87.2 1.31.29.89.19 1.9.34 2.82.12.63-.15 1.15-.54 1.25-1.12.1-.56-.27-1.02-.78-1.38-.67-.47-1.14-1.17-1.38-1.95.23-.03.46-.07.67-.14.49-.16.95-.5 1.06-1.01.11-.53-.18-.92-.63-1.18-.37-.22-.87-.4-1.28-.53.36-.69.62-1.64.58-2.52-.13-2.83-2.41-4.88-5.59-4.88z"/></svg>
+          </a>
+          <a href="https://x.com/CarviceExpress" target="_blank" rel="noopener" class="footer-social-btn" aria-label="منصة إكس X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/carviceexpress/?next=%2Fcareexpress_eg%2F" target="_blank" rel="noopener" class="footer-social-btn" aria-label="انستغرام">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/people/Carvice-Express/61573832623304/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="فيسبوك">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+
+        <!-- App Download -->
+        <div class="footer-app-box">
+          <span class="footer-app-title">حمل التطبيق الان</span>
+          <a href="#" class="footer-app-btn">
+            <span>تثبيت التطبيق</span>
+            <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/branches.js"></script>
+</body>
+</html>
